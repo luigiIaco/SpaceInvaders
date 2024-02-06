@@ -1,3 +1,4 @@
+alert("per sparare premere la spacebar");
 const CELL_ROW=15;
 const CELL_TOT=CELL_ROW*CELL_ROW;
 var GRID=[];

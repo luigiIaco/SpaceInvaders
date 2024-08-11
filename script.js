@@ -91,11 +91,11 @@ function game_start () {
 ship_init();
 }
 
+
 function ship_init() {
 SHIP_POS=Math.round(SHIP_AREA.length/2)-1;
 SHIP_AREA[SHIP_POS].classList.add('ship');
 }
-
 
 function KeyPress (event) {
 var key=event.which;

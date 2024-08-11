@@ -25,10 +25,7 @@ var contatore=0;
 var int;
 let ALIEN_TIMER;
 
-
-
 function init() {
-  
   game_init();
   game_start();
   document.addEventListener('keydown',KeyPress);
@@ -37,12 +34,7 @@ function init() {
   setAttributo();
   setclass();
   ALIEN_TIMER=setInterval(alien_move,200);
-
-  
-  
- 
 }
-
 
 function game_init() {
 let board=document.getElementById("game_area");
@@ -51,17 +43,13 @@ let div=document.createElement('DIV');
 div.setAttribute('_pos',i);
 board.appendChild(div);
 GRID.push(div);
-
 }
 for(let i=CELL_TOT-CELL_ROW;i<CELL_TOT;i++){
   SHIP_AREA.push(GRID[i]);
-
 }
-
 }
 function setclass() {
     GRID[211].classList.add('over');
-  
 }
 
 function setAttributo() {
@@ -99,7 +87,6 @@ function setAttributo() {
     GRID[209].setAttribute('border','DX');  
     }
       
-  
 function game_start () {
 ship_init();
 }
@@ -111,7 +98,6 @@ SHIP_AREA[SHIP_POS].classList.add('ship');
 
 
 function KeyPress (event) {
-  
 var key=event.which;
 switch(key) {
 case 37:
@@ -132,7 +118,6 @@ SHIP_AREA[SHIP_POS].classList.remove('ship');
 function ship_add () {
   SHIP_AREA[SHIP_POS].classList.add('ship');
   }
-
   function ship_move (mode) {
   switch(mode) {
   case 'LEFT':
@@ -141,12 +126,7 @@ function ship_add () {
     ship_clear();
     SHIP_POS--;
     ship_add ();
-    
-    
     break;
-    
-    
-    
     case 'RIGHT':
       if(SHIP_POS==SHIP_AREA.length-1) 
       return true;
@@ -154,8 +134,6 @@ function ship_add () {
       SHIP_POS++;
       ship_add();
       break;
-      
-      
   }
   }
   function moveRight() {
@@ -167,7 +145,6 @@ function ship_add () {
       ALIENS[i].removeAttribute('id');
     }  
   alien_dispose(app);
-    
   }
 
   function moveLeft () {
@@ -212,22 +189,11 @@ function ship_add () {
       ALIENS[i].classList.add('alien');
       ALIENS[i].setAttribute('id',i);
     }
-   
-    
     for(let j=0;j<lista.length;j++){ 
     ALIENS[lista[j]].classList.remove('alien');
     }
-    
-    
-  
-  
   }
     
-  
-  
-
-
-
   function alien_move() {
     switch (ALIEN_DIR) {
       case 'DX':
@@ -263,14 +229,6 @@ function ship_add () {
   
   }
 
-
-
-
-
-  
-
-  
-
   function ship_laser () {
   let laser_pos=CELL_TOT-(CELL_ROW*2)+SHIP_POS;
   var old_pos=1;
@@ -290,16 +248,10 @@ function ship_add () {
       if(GRID[laser_pos].classList.contains('alien')) { 
         
         alien_boom(laser_pos);
-        clearInterval(laser_time);
-        
-      
+        clearInterval(laser_time);   
       }
-  
-      }
-    
-   }
-   
-   
+      } 
+   } 
    laser_time=setInterval(laser_move,200); 
   }
   function alien_boom(pos) {
